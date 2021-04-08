@@ -11,7 +11,7 @@ class Mhsxt extends CI_Model{
 
     public function getList($start, $size){
         $start = isset($start)? $start : 0;
-        $query=$this->db->query("select * from ho_so_xet_tuyen hsxt inner join  thi_sinh ts on hsxt.ma_ts=ts.ma_ts limit $start , $size");
+        $query=$this->db->query("select * from ho_so_xet_tuyen hsxt inner join  thi_sinh ts on hsxt.ma_ts=ts.ma_ts  limit $start , $size");
         return $query->result_array();
     }
 
@@ -62,11 +62,11 @@ class Mhsxt extends CI_Model{
         return $result->ma_ts;
     }  
 
-    public function deleteById($id,$ma_ts){
+    public function deleteById($id){
         $this->db->query("delete from nguyen_vong where ma_hsxt = $id;");
         $this->db->query("delete from file_minh_chung where ma_hsxt = $id;");
         $this->db->query("delete from ho_so_xet_tuyen where ma_hsxt = $id;");
-        $this->db->query("delete from thi_sinh where ma_ts = $ma_ts;");
+
     }
 }
 ?>

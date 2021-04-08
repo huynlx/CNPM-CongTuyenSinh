@@ -66,8 +66,7 @@
 switch (ENVIRONMENT)
 {
 	case 'development':
-		// error_reporting(-1); //hiện php error report
-		error_reporting(0);     //ẩn php error report
+		error_reporting(-1);
 		ini_set('display_errors', 1);
 	break;
 

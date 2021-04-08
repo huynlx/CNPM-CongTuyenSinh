@@ -62,10 +62,10 @@ $(document).ready(function() {
                 $('#back-to-top').hide();
             }
         };
-    backToTop();
-    $(window).on('scroll', function() {
-        backToTop();
-    });
+    // backToTop();
+    // $(window).on('scroll', function() {
+    //     backToTop();
+    // });
     $('#back-to-top').on('click', function(e) {
         e.preventDefault();
         $('html,body').animate({
@@ -88,7 +88,7 @@ $(document).ready(function() {
     var changeMenu = document.querySelector('.search__menu-mb .fa-search');
     changeMenu.addEventListener("click", function() {
         this.classList.toggle('fa-times');
-        $(".search-mb").slideToggle("slow");
+        $(".search-mb").slideToggle("300");
     });
 
 
@@ -339,18 +339,19 @@ $(document).ready(function() {
 
 
     var btnNguyenVong = $("#btnNguyenVong");
-    $(btnNguyenVong).click(function(e) {
-        e.preventDefault();
+    $(btnNguyenVong).click(function() {
+        // e.preventDefault();
+        // alert("cc");
         var url = base_url + "/CongTuyenSinhDHTL/Sources/index.php/home/pro_add_nguyen_vong";
-        //console.log("Nhay vao day: " + url);
+        console.log("Nhay vao day: " + url);
         var csdt_edit_ts = $("#csdt_edit_ts").val();
-        //console.log(csdt_edit_ts);
+        console.log(csdt_edit_ts);
         var tennguyenvong = $("#tennguyenvong").val();
-        //console.log(tennguyenvong);
+        console.log(tennguyenvong);
         var nhomnganhxettuyen = $("#nhomnganhxettuyen").val();
-        //console.log(nhomnganhxettuyen);
+        console.log(nhomnganhxettuyen);
         var tohopxettuyen = $("#tohopxettuyen").val();
-        //console.log(tohopxettuyen);
+        console.log(tohopxettuyen);
         var ma_hsxt = $("#ma_hsxt").val();
         console.log(ma_hsxt);
         $.ajax({
@@ -359,16 +360,16 @@ $(document).ready(function() {
             type: 'POST', // phương thức dữ liệu được truyền đi
             datatype: 'json', // định dạng dữ liệu trả về là json
             success: function(data) { //kết quả trả về từ server nếu gửi thành công
-                // alert("cc")
+                alert("cc");
                 //   var option = "";
                 $.each($.parseJSON(data), function(key, value) {
                     //option += "<option value='"+value['id']+"'>"+value['title']+"</option>"
                     //console.log(value.length);
                     // var 
-                    for (var key in value) {
-                        //if (key=='tennguyenvong')
-                        console.log(key);
-                    }
+                    // for (var key in value) {
+                    //if (key=='tennguyenvong')
+                    console.log(value);
+                    // }
                     $('#myTable').append("<tr><td>" + value['ten_nguyen_vong'] + "</td><td>" + value['ma_ndt'] + "</td><td>" + value['ma_thm'] + "</td><td>" + value['trang_thai'] + "</td></tr>");
                     //console.log(value[tennguyenvong]);
                 })
@@ -392,6 +393,7 @@ $(document).ready(function() {
                 //     }));
                 //console.log(data);
                 // ĐỌc dữ liệu
+
                 $("#form_file_minh_chung").show();
             }
         });

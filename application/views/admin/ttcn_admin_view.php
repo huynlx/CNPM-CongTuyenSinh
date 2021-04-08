@@ -1,13 +1,12 @@
-<div class="me-TTCN mt-1">
+<div class="container me-TTCN">
     <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="d-none d-lg-block col-lg-5 text-center">
-            <img src="<?php echo base_url() ?>assets/img/ttcn.png"  style="max-height:650px;">
+    <div class="d-none d-lg-block col-lg-6">
+            <img src="<?php echo base_url();?>assets/img/ttcn.png" class="w-100 h-100">
         </div>
-        <div class="col-lg-5 mt-4">
+        <div class="col-lg-6">
             <div class="row register-form">
-            <form class="" method="post" action="<?php echo base_url() . 'index.php/home/pro_ttcn/' .$user['id_tk']; ?>" style="padding: 0; margin: 0; width: 100%">
-                    <h2 class="text-center">Thông Tin Cá Nhân</h2>
+                <form class="custom-form" method="post" action="<?php echo base_url() . 'index.php/home/pro_ttcn/' .$user['id_tk']; ?>">
+                    <h1>Thông Tin Cá Nhân</h1>
                     <div class="form-row form-group">
                         <div class="col-sm-4 label-column"><label class="col-form-label">ID</label></div>
                         <div class="col-sm-6 input-column"><input name="id" class="form-control" type="text" value="<?php echo $user['id_tk'];?>" readonly></div>
@@ -49,11 +48,10 @@
                         <div class="col-sm-4 label-column"><label class="col-form-label">Địa Chỉ</label></div>
                         <div class="col-sm-6 input-column"><input name="dc" class="form-control hide-update" type="text" value="<?php echo $user['dia_chi_tk'];?>"></div>
                     </div>
-                    <input class="btn btn-light submit-button hide-update border " type="submit" value="Cập Nhật">
+                    <input class="btn btn-light submit-button hide-update" type="submit" value="Cập Nhật">
                 </form>
-                <?php echo validation_errors(); ?>
             </div>
+            <?php echo validation_errors();?>
         </div>
     </div>
 </div>
-

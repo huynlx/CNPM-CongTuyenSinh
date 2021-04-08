@@ -20,13 +20,13 @@ class Mndt extends CI_Model{
     }
 
     public function add($manganh,$tennganh, $chuongtrinhdaotao, $ghichu, $gioithieu, $coso){
-        $this->db->query("insert into nganh_dao_tao(ma_ndt,ma_csdt,ten_ndt, chuong_trinh_dao_tao, ghi_chu_ndt, gioi_thieu_ndt) values('$manganh','$coso','$tennganh','$chuongtrinhdaotao','$ghichu','$gioithieu');");
+        $this->db->query("insert into nganh_dao_tao(ma_ndt,ten_ndt, chuong_trinh_dao_tao_ndt, ghi_chu_ndt, gioi_thieu_ndt,ma_csdt) values('$manganh','$tennganh','$chuongtrinhdaotao','$ghichu','$gioithieu','$coso');");
         // $data=$this->db->query("select id_dd from dia_diem dd where id_dd >= all (select id_dd from dia_diem);")->row_array();
         // $id=$data['id_dd'];
         // $this->db->query("insert into ctdd(id_dd,tieu_de_dd, noi_dung_dd, loai) values($id,'$td','$nd','$loai');");
     }
     public function edit($id,$manganh, $tennganh, $chuongtrinhdaotao, $ghichu, $gioithieu, $coso){
-        $this->db->query("update nganh_dao_tao set ma_ndt='$manganh' , ten_ndt = '$tennganh', chuong_trinh_dao_tao = '$chuongtrinhdaotao', ghi_chu_ndt= '$ghichu' , gioi_thieu_ndt='$gioithieu',ma_csdt= '$coso' where ma_ndt = '$id';");
+        $this->db->query("update nganh_dao_tao set ma_ndt='$manganh' , ten_ndt = '$tennganh', chuong_trinh_dao_tao_ndt = '$chuongtrinhdaotao', ghi_chu_ndt= '$ghichu' , gioi_thieu_ndt='$gioithieu',ma_csdt= '$coso' where ma_ndt = '$id';");
         
     }
     public function getById($id){
@@ -52,12 +52,5 @@ class Mndt extends CI_Model{
         $query=$this->db->query("select * from nganh_dao_tao;");
         return $query->result_array();
     }
-
-    public function getListByID($id){
-        $query=$this->db->query("select * from nganh_dao_tao where ma_csdt='$id';");
-        return $query->result_array();
-    }
-
-    
 }
 ?>

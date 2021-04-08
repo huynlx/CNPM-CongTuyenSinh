@@ -7,7 +7,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="<?php echo base_url();?>admin/index" class="nav-link"></a>
+                    <a href="<?php echo base_url();?>admin/index" class="nav-link">Home</a>
                 </li>
             </ul>
 
@@ -26,7 +26,7 @@
         <div class="navbar__right">
             <div class="toggle_home_admin">
                 <div class="rediect">
-                    <a class="nav-link" href="<?php echo base_url();?>" style="color: black;font-weight:bold;">Trang chủ</a>
+                    <a class="nav-link" href="<?php echo base_url();?>">Cổng Tuyển Sinh Đại Học Thủy Lợi</a>
                 </div>
                 <div class="account_admin">
                     <a style="color:#555;" class="user_name-ad">

@@ -1,63 +1,50 @@
 /* ************FOOTER************* */
-
-#footer {
-    background: #003478;
+#footer{
+    background: #003366;
     color: #fff;
     border-top: 5px solid #335c85;
     padding: 30px 0;
 }
-
-#footer .footer__wrapp {
+#footer .footer__wrapp{
     display: flex;
 }
-
-#footer #footer__left {
+#footer #footer__left{
     flex: 0 0 70%;
     width: 70%;
 }
-
-#footer #footer__left .address-warpp {
+#footer #footer__left .address-warpp{
     display: flex;
 }
-
-#footer #footer__left .address-warpp .address {
+#footer #footer__left .address-warpp .address{
     width: 50%;
     font-weight: 700;
 }
-
-#footer__left .address-warpp .address h1 {
+#footer__left .address-warpp .address h1{
     font-size: 15px;
     font-weight: 700;
 }
-
-#footer #footer__right {
+#footer #footer__right{
     flex-grow: 1;
 }
-
-#footer #footer__right .social-icons {
+#footer #footer__right .social-icons{
     display: flex;
 }
-
-#footer #footer__right .social-icons i {
+#footer #footer__right .social-icons i{
     color: #fff;
 }
-
-#footer__right .social-icons i {
+#footer__right .social-icons i{
     margin-left: 15px;
     font-size: 3em;
 }
-
-#footer__right .social-icons i:hover {
+#footer__right .social-icons i:hover{
     transition-timing-function: ease-in;
     transition: 2s;
     transform: scale(1.2);
 }
-
-#footer #footer__right .banquyen {
+#footer #footer__right .banquyen{
     font-size: 18px;
 }
-
-#back-to-top {
+#back-to-top{
     display: none;
     position: fixed;
     bottom: 50px;
@@ -78,10 +65,7 @@
     align-items: center;
     justify-content: center;
 }
-
-#back-to-top:hover {
+#back-to-top:hover{
     background-color: #4A9130;
 }
-
-
 /* *************END************* */

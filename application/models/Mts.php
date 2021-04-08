@@ -17,65 +17,59 @@ class Mts extends CI_Model{
     
     public function add($ho_ten_ts, $gioi_tinh_ts, $ngay_sinh_ts, $noi_sinh_ts, $dan_toc_ts , $so_cmnd_cccd_ts, $ngay_cap, $noi_cap, 
 $ho_khau_tinh_thanh_pho, $ho_khau_quan_huyen, $ho_khau_xa_phuong, $ho_khau_thon_ban_duong_pho, $tinh_tp_lop_10, $quan_huyen_lop_10, $truong_lop_10, $tinh_tp_lop_11, $quan_huyen_lop_11, $truong_lop_11, $quan_huyen_lop_12, $tinh_tp_lop_12, $truong_lop_12, $sdt_ts, $email_ts, $nam_tot_nghiep_ts, $khu_vuc_uu_tien, $doi_tuong_uu_tien){
-        
-            $this->db->query("insert into thi_sinh (
-                ho_ten_ts,
-                gioi_tinh_ts,
-                ngay_sinh_ts,
-                noi_sinh_ts,
-                dan_toc_ts,
-                so_cmnd_cccd_ts,
-                ngay_cap ,
-                noi_cap ,
-                ho_khau_tinh_thanh_pho ,
-                ho_khau_quan_huyen,
-                ho_khau_xa_phuong ,
-                ho_khau_thon_ban_duong_pho,
-                tinh_tp_lop_10 ,
-                quan_huyen_lop_10 ,
-                truong_lop_10,
-                    tinh_tp_lop_11 ,
-                    quan_huyen_lop_11 ,
-                    truong_lop_11 ,
-                    tinh_tp_lop_12 ,
-                    quan_huyen_lop_12 ,
-                    truong_lop_12 ,
-                    sdt_ts ,
-                    email_ts ,
-                    nam_tot_nghiep_ts ,
-                    khu_vuc_uu_tien ,
-                    doi_tuong_uu_tien) values (
-                    '$ho_ten_ts',
-                    '$gioi_tinh_ts',
-                    '$ngay_sinh_ts',
-                    '$noi_sinh_ts',
-                    '$dan_toc_ts',
-                    '$so_cmnd_cccd_ts',
-                    '$ngay_cap',
-                    '$noi_cap',
-                    '$ho_khau_tinh_thanh_pho',
-                    '$ho_khau_quan_huyen',
-                    '$ho_khau_xa_phuong',
-                    '$ho_khau_thon_ban_duong_pho',
-                    '$tinh_tp_lop_10',
-                    '$quan_huyen_lop_10',
-                    '$truong_lop_10',
-                    '$tinh_tp_lop_11',
-                    '$quan_huyen_lop_11',
-                    '$truong_lop_11',
-                    '$tinh_tp_lop_12',
-                    '$quan_huyen_lop_12',
-                    '$truong_lop_12',
-                    '$sdt_ts',
-                    '$email_ts',
-                    '$nam_tot_nghiep_ts',
-                    '$khu_vuc_uu_tien',
-                    '$doi_tuong_uu_tien');");
-       
-                // if (!$rs) {
-                //     echo "<script>alert('Thí sinh đã Tồn Tại !!!')</script>";
-                //     echo "<script>window.history.back();</script>";
-                // }
+        $this->db->query("insert into thi_sinh (
+            ho_ten_ts,
+            gioi_tinh_ts,
+            ngay_sinh_ts,
+            noi_sinh_ts,
+            dan_toc_ts,
+            so_cmnd_cccd_ts,
+            ngay_cap ,
+            noi_cap ,
+            ho_khau_tinh_thanh_pho ,
+            ho_khau_quan_huyen,
+            ho_khau_xa_phuong ,
+            ho_khau_thon_ban_duong_pho,
+            tinh_tp_lop_10 ,
+            quan_huyen_lop_10 ,
+            truong_lop_10,
+                tinh_tp_lop_11 ,
+                quan_huyen_lop_11 ,
+                truong_lop_11 ,
+                tinh_tp_lop_12 ,
+                quan_huyen_lop_12 ,
+                truong_lop_12 ,
+                sdt_ts ,
+                email_ts ,
+                nam_tot_nghiep_ts ,
+                khu_vuc_uu_tien ,
+                doi_tuong_uu_tien) values (
+                '$ho_ten_ts',
+                '$gioi_tinh_ts',
+                '$ngay_sinh_ts',
+                '$noi_sinh_ts',
+                '$dan_toc_ts',
+                '$so_cmnd_cccd_ts',
+                '$ngay_cap',
+                '$noi_cap',
+                '$ho_khau_tinh_thanh_pho',
+                '$ho_khau_quan_huyen',
+                '$ho_khau_xa_phuong',
+                '$ho_khau_thon_ban_duong_pho',
+                '$tinh_tp_lop_10',
+                '$quan_huyen_lop_10',
+                '$truong_lop_10',
+                '$tinh_tp_lop_11',
+                '$quan_huyen_lop_11',
+                '$truong_lop_11',
+                '$tinh_tp_lop_12',
+                '$quan_huyen_lop_12',
+                '$truong_lop_12',
+                '$sdt_ts',
+                '$email_ts',
+                '$nam_tot_nghiep_ts',
+                '$khu_vuc_uu_tien',
+                '$doi_tuong_uu_tien');");
         // $data=$this->db->query("select id_dd from dia_diem dd where id_dd >= all (select id_dd from dia_diem);")->row_array();
         // $id=$data['id_dd'];
         // $this->db->query("insert into ctdd(id_dd,tieu_de_dd, noi_dung_dd, loai) values($id,'$td','$nd','$loai');");
@@ -105,46 +99,6 @@ $ho_khau_tinh_thanh_pho, $ho_khau_quan_huyen, $ho_khau_xa_phuong, $ho_khau_thon_
         $query=$this->db->query("select * from thi_sinh where ma_ts = $ma_ts;");
         return $query->row_array();
     }  
-
-    public function edit($id,$ho_ten_ts, $gioi_tinh_ts, $ngay_sinh_ts, $noi_sinh_ts, $dan_toc_ts , $so_cmnd_cccd_ts, $ngay_cap, $noi_cap, 
-$ho_khau_tinh_thanh_pho, $ho_khau_quan_huyen, $ho_khau_xa_phuong, $ho_khau_thon_ban_duong_pho, $tinh_tp_lop_10, $quan_huyen_lop_10, $truong_lop_10, $tinh_tp_lop_11, $quan_huyen_lop_11, $truong_lop_11, $quan_huyen_lop_12, $tinh_tp_lop_12, $truong_lop_12, $sdt_ts, $email_ts, $nam_tot_nghiep_ts, $khu_vuc_uu_tien, $doi_tuong_uu_tien){
-        
-            $this->db->query("update thi_sinh set
-                ho_ten_ts='$ho_ten_ts',
-                gioi_tinh_ts='$gioi_tinh_ts',
-                ngay_sinh_ts='$ngay_sinh_ts',
-                noi_sinh_ts='$noi_sinh_ts',
-                dan_toc_ts='$dan_toc_ts',
-                so_cmnd_cccd_ts='$so_cmnd_cccd_ts',
-                ngay_cap='$ngay_cap' ,
-                noi_cap='$noi_cap' ,
-                ho_khau_tinh_thanh_pho='$ho_khau_tinh_thanh_pho' ,
-                ho_khau_quan_huyen='$ho_khau_quan_huyen',
-                ho_khau_xa_phuong='$ho_khau_xa_phuong' ,
-                ho_khau_thon_ban_duong_pho='$ho_khau_thon_ban_duong_pho',
-                tinh_tp_lop_10='$tinh_tp_lop_10' ,
-                quan_huyen_lop_10='$quan_huyen_lop_10' ,
-                truong_lop_10='$truong_lop_10',
-                    tinh_tp_lop_11='$tinh_tp_lop_11' ,
-                    quan_huyen_lop_11='$quan_huyen_lop_11' ,
-                    truong_lop_11='$truong_lop_11' ,
-                    tinh_tp_lop_12='$tinh_tp_lop_12' ,
-                    quan_huyen_lop_12='$quan_huyen_lop_12' ,
-                    truong_lop_12='$truong_lop_12' ,
-                    sdt_ts='$sdt_ts' ,
-                    email_ts='$email_ts' ,
-                    nam_tot_nghiep_ts='$nam_tot_nghiep_ts' ,
-                    khu_vuc_uu_tien='$khu_vuc_uu_tien' ,
-                    doi_tuong_uu_tien='$doi_tuong_uu_tien' where ma_ts=$id;");
-       
-                // if (!$rs) {
-                //     echo "<script>alert('Thí sinh đã Tồn Tại !!!')</script>";
-                //     echo "<script>window.history.back();</script>";
-                // }
-        // $data=$this->db->query("select id_dd from dia_diem dd where id_dd >= all (select id_dd from dia_diem);")->row_array();
-        // $id=$data['id_dd'];
-        // $this->db->query("insert into ctdd(id_dd,tieu_de_dd, noi_dung_dd, loai) values($id,'$td','$nd','$loai');");
-    }
 
     
     
